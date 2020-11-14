@@ -7,11 +7,6 @@ public class SaveLoadPrac : MonoBehaviour
 {
     private PlayerData data;
 
-    private void Start()
-    {
-        data = GameObject.Find("player").GetComponent<PlayerController>().playerData;
-    }
-
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Alpha1))
@@ -47,4 +42,13 @@ public class SaveLoadPrac : MonoBehaviour
         string jsonData = File.ReadAllText(path);
         data = JsonUtility.FromJson<PlayerData>(jsonData);
     }
+}
+
+
+[System.Serializable]
+public class PlayerData
+{
+    public int age;
+    public bool isDead;
+    public string name;
 }

@@ -2,8 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using System.IO;
 
-public class DialogueSystem: MonoBehaviour
+public class DialogueSystem : MonoBehaviour // 대화창 대사를 받아 다음으로 넘기는 역할
 {
     public Text txtName;
     public Text txtSentence;
@@ -13,6 +14,7 @@ public class DialogueSystem: MonoBehaviour
 
     public void DialogueBegin(Dialogue info)
     {
+        names.Clear();
         sentences.Clear();
 
         foreach (var name in info.names)
@@ -38,4 +40,12 @@ public class DialogueSystem: MonoBehaviour
     {
         Debug.Log("Dialogue Ended");
     }
+}
+
+
+[System.Serializable]
+public class Dialogue
+{
+    public List<string> names;
+    public List<string> sentences;
 }
