@@ -1,5 +1,5 @@
 {
-    "name": "KMJ",
-    "age": 21,
-    "isDead": true
+  "age" : 21,
+  "isDead" : false,
+  "name" : "MJ"
 }
